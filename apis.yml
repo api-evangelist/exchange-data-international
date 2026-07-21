@@ -1,0 +1,386 @@
+aid: exchange-data-international
+url: https://raw.githubusercontent.com/api-evangelist/exchange-data-international/refs/heads/main/apis.yml
+name: Exchange Data International
+kind: company
+description: 'Exchange Data International (EDI) is an independent, privately held financial
+  data vendor founded in 1994 by Jonathan Bloch and headquartered in London, with operations
+  in the USA, India, and Morocco serving 450+ institutional clients. EDI sells securities
+  reference data, worldwide equity and fixed income corporate actions, end-of-day pricing,
+  adjustment factors, shares outstanding, derivatives reference and pricing, economic indicators
+  and calendars, fund NAVs, and FX rates. Data is delivered as SFTP flat-file feeds and through
+  a self-serve REST API: the EDI Developer portal (developer.exchange-data.com) documents
+  24 API products on a shared base at api3.exchange-data.com, with account registration, an
+  API Playground, per-product subscriptions, and JSON or pipe-separated responses. No public
+  OpenAPI or AsyncAPI specification is published.'
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial
+- Market Data
+- Corporate Actions
+- Reference Data
+- End of Day Pricing
+- Fixed Income
+- Derivatives
+- Economic Data
+- Stocks
+- Exchange
+created: '2026-07-21'
+modified: '2026-07-21'
+specificationVersion: '0.19'
+apis:
+- aid: exchange-data-international:end-of-day-pricing-api
+  name: EDI End of Day Pricing Data API
+  tags:
+  - Pricing
+  - End of Day
+  - Equities
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data
+    type: Documentation
+  description: Worldwide end-of-day equity pricing (open, high, low, close, bid, ask, last
+    trade, volume) queried by MIC, LocalCode, or ISIN via the GetLatestEODPrices endpoint,
+    returned as JSON or pipe-separated values with pagination.
+- aid: exchange-data-international:adjustment-factors-api
+  name: EDI Adjustment Factors Data API
+  tags:
+  - Adjustment Factors
+  - Pricing
+  - Corporate Actions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/adjustment_factors_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/adjustment_factors_data
+    type: Documentation
+  description: Adjustment factors used to back-adjust end-of-day per-share price series for
+    corporate actions so historical prices can be graphed consistently, via the GetLatestAdjustmentFactors
+    endpoint.
+- aid: exchange-data-international:worldwide-equity-analytics-api
+  name: EDI Worldwide Equity Analytics API
+  tags:
+  - Equities
+  - Analytics
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/worldwide_equity_analytics
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/worldwide_equity_analytics
+    type: Documentation
+  description: Equity analytics measures for worldwide listed securities via the GetLatestEquityAnalytics
+    endpoint on EDI's shared REST base.
+- aid: exchange-data-international:otc-data-api
+  name: EDI OTC Data API
+  tags:
+  - Bonds
+  - OTC
+  - Pricing
+  - Yield Curves
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/bond_price_otc_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/bond_price_otc_data
+    type: Documentation
+  description: Daily over-the-counter bond pricing, including independent zero-coupon and
+    swap-implied yield curves for valuations, via the GetBondLatestPricing endpoint.
+- aid: exchange-data-international:derivatives-reference-data-api
+  name: EDI Derivatives Reference Data API
+  tags:
+  - Derivatives
+  - Options
+  - Reference Data
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/derivatives_reference_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/derivatives_reference_data
+    type: Documentation
+  description: Listed derivatives security master reference data via the GetOptionSecurityMaster
+    endpoint, covering exchange-traded options contract specifications.
+- aid: exchange-data-international:derivatives-eod-pricing-api
+  name: EDI Derivatives End of Day Pricing API
+  tags:
+  - Derivatives
+  - Pricing
+  - End of Day
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/derivatives_end_of_day_pricing
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/derivatives_end_of_day_pricing
+    type: Documentation
+  description: End-of-day pricing for listed derivatives via the GetDerivativesPricing endpoint.
+- aid: exchange-data-international:worldwide-corporate-actions-api
+  name: EDI Worldwide Corporate Actions API
+  tags:
+  - Corporate Actions
+  - Equities
+  - Dividends
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/world_corporate_actions
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/world_corporate_actions
+    type: Documentation
+  description: Worldwide equity corporate actions with 200+ output fields (security identifiers,
+    issuer, event details, dates, payment information) queried by OperationalMic, LocalCode,
+    ISIN, or event code via GetLatestCorporateActions, in JSON or PSV.
+- aid: exchange-data-international:exchange-traded-notes-api
+  name: EDI Exchange Traded Notes API
+  tags:
+  - ETN
+  - Exchange Traded Products
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/exchange_traded_notes
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/exchange_traded_notes
+    type: Documentation
+  description: Exchange traded notes data via the GetLatestExchangeTradedNotes endpoint.
+- aid: exchange-data-international:worldwide-fixed-income-corporate-actions-api
+  name: EDI Worldwide Fixed Income Corporate Actions API
+  tags:
+  - Fixed Income
+  - Bonds
+  - Corporate Actions
+  - Reference Data
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/worldwide_fixed_income_corporate_action
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/worldwide_fixed_income_corporate_action
+    type: Documentation
+  description: Fixed income security master and corporate actions coverage for bonds via the
+    GetBondSecurityMaster endpoint.
+- aid: exchange-data-international:securities-reference-data-api
+  name: EDI Securities Reference Data API
+  tags:
+  - Reference Data
+  - Securities
+  - ISIN
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/securities_reference_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/securities_reference_data
+    type: Documentation
+  description: Consolidated securities reference file (SRF) data for worldwide listed instruments
+    via the GetConsolidatedSRF endpoint.
+- aid: exchange-data-international:global-market-holidays-api
+  name: EDI Global Market Holidays and Timings API
+  tags:
+  - Market Holidays
+  - Trading Calendar
+  - Exchanges
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/financial_public_holidays
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/financial_public_holidays
+    type: Documentation
+  description: Holiday observances and market timings for worldwide exchanges via the GetGlobalMarketHolidays
+    endpoint; the service is divided into five products covering holidays and trading hours.
+- aid: exchange-data-international:worldwide-shares-outstanding-api
+  name: EDI Worldwide Shares Outstanding API
+  tags:
+  - Shares Outstanding
+  - Equities
+  - Reference Data
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/worldwide_shares_outstanding
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/worldwide_shares_outstanding
+    type: Documentation
+  description: Shares outstanding figures for worldwide listed equities via the GetLatestSharesOutstanding
+    endpoint.
+- aid: exchange-data-international:derivactions-api
+  name: EDI DerivActions API
+  tags:
+  - Derivatives
+  - Corporate Actions
+  - Adjustment Notices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/deriv_actions
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/deriv_actions
+    type: Documentation
+  description: Detailed exchange adjustment notices for listed derivatives in a standardized
+    machine-readable format, queried by underlying MIC, ISIN, or symbol via GetLatestDerivActions.
+- aid: exchange-data-international:global-economic-indicators-api
+  name: EDI Global Economic Indicators API
+  tags:
+  - Economic Data
+  - Indicators
+  - Macro
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/economic_indicator
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/economic_indicator
+    type: Documentation
+  description: Global economic indicator releases via the GetLatestEconomicIndicator endpoint.
+- aid: exchange-data-international:economic-calendar-api
+  name: EDI Economic Calendar API
+  tags:
+  - Economic Data
+  - Calendar
+  - Macro
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/economic_calendar
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/economic_calendar
+    type: Documentation
+  description: Forward-looking economic calendar events via the GetLatestEconomicCalendar
+    endpoint.
+- aid: exchange-data-international:central-bank-calendar-api
+  name: EDI Central Bank Calendar API
+  tags:
+  - Central Banks
+  - Calendar
+  - Macro
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/central_bank_calendar
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/central_bank_calendar
+    type: Documentation
+  description: Central bank meeting and announcement calendar via the GetLatestCentralBankCalendar
+    endpoint.
+- aid: exchange-data-international:us-economic-data-api
+  name: EDI US Economic Data API
+  tags:
+  - Economic Data
+  - United States
+  - Macro
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/economic_data
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/economic_data
+    type: Documentation
+  description: United States economic data series via the GetUsEconomicData endpoint (documented
+    on the developer portal with an http:// scheme against the same api3 host).
+- aid: exchange-data-international:initial-public-offerings-api
+  name: EDI Initial Public Offerings API
+  tags:
+  - IPO
+  - Equities
+  - New Issues
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/initial_public_offerings
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/initial_public_offerings
+    type: Documentation
+  description: Worldwide initial public offering data via the GetLatestInitialPublicOfferings
+    endpoint.
+- aid: exchange-data-international:corporate-bonds-evaluated-pricing-api
+  name: EDI Corporate Bonds Data API
+  tags:
+  - Fixed Income
+  - Corporate Bonds
+  - Evaluated Pricing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/corporate_bonds_data_dictionary
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/corporate_bonds_data_dictionary
+    type: Documentation
+  description: Corporate bond evaluations via the GetLatestCorporateEvaluations endpoint,
+    documented in the catalogue as the Corporate Bonds Data Dictionary product.
+- aid: exchange-data-international:option-analytics-api
+  name: EDI Option Analytics Service API
+  tags:
+  - Options
+  - Greeks
+  - Analytics
+  - Derivatives
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/option_analytics_service
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/option_analytics_service
+    type: Documentation
+  description: Options analytics including Greeks via the GetLatestOptionsGreeks endpoint.
+- aid: exchange-data-international:worldwide-funds-corporate-actions-api
+  name: EDI Worldwide Funds Corporate Actions API
+  tags:
+  - Funds
+  - Corporate Actions
+  - Distributions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/worldwide_funds_corporate_action
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/worldwide_funds_corporate_action
+    type: Documentation
+  description: Fund corporate actions coverage; the documented endpoint GetLatestSouthAfricanFundDistributions
+    returns South African fund distribution events.
+- aid: exchange-data-international:net-asset-value-api
+  name: EDI Net Asset Value API
+  tags:
+  - Funds
+  - NAV
+  - Pricing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/net_asset_value
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/net_asset_value
+    type: Documentation
+  description: Investment fund net asset values via the GetLatestNetAssetValue endpoint.
+- aid: exchange-data-international:index-constitution-api
+  name: EDI Index Constitution API
+  tags:
+  - Indices
+  - Constituents
+  - Reference Data
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/index_constitution
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/index_constitution
+    type: Documentation
+  description: Index constituent reference data via the GetReferenceNameForIndexConstituents
+    endpoint.
+- aid: exchange-data-international:foreign-exchange-rates-api
+  name: EDI Foreign Exchange Rates API
+  tags:
+  - FX
+  - Currencies
+  - Rates
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.exchange-data.com/api-documentation/foreign_exchange_rates
+  baseURL: https://api3.exchange-data.com
+  properties:
+  - url: https://developer.exchange-data.com/api-documentation/foreign_exchange_rates
+    type: Documentation
+  description: Foreign exchange rates via the GetLatestFXRates endpoint.
+common:
+- type: Website
+  url: https://www.exchange-data.com/
+- type: Portal
+  url: https://developer.exchange-data.com/
+- type: Documentation
+  url: https://developer.exchange-data.com/api-documentation/
+- type: SignUp
+  url: https://developer.exchange-data.com/register
+- type: Blog
+  url: https://www.exchange-data.com/insights-edi/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/exchange-data-international/
+- type: TermsOfService
+  url: https://www.exchange-data.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.exchange-data.com/privacy-policy/
+- type: Support
+  url: https://developer.exchange-data.com/contact
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

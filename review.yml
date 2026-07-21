@@ -1,0 +1,98 @@
+aid: exchange-data-international
+name: Exchange Data International
+review:
+  question: Does Exchange Data International expose a public, documented API surface?
+  answer: true
+  date: '2026-07-21'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Exchange Data International (EDI) is one of the API-friendlier institutional
+    market data vendors. It runs a genuine self-serve developer portal at
+    https://developer.exchange-data.com/ with a public API catalogue documenting
+    24 REST API products - end-of-day pricing, adjustment factors, worldwide
+    equity and fixed income corporate actions, securities reference data (SRF),
+    shares outstanding, derivatives reference/pricing/DerivActions, options
+    Greeks, OTC bond pricing, market holidays, economic indicators and
+    calendars, IPOs, fund NAVs, index constituents, and FX rates. All documented
+    endpoints share one base, https://api3.exchange-data.com, follow a
+    GET Get{Product}?params pattern keyed on MIC/LocalCode/ISIN-style
+    identifiers, and return JSON or pipe-separated values (PSV) with pagination.
+    Registration is self-serve and grants an API Playground, but data access is
+    entitlement-managed per product subscription; there is no public pricing
+    page (contact sales). An unauthenticated request to a documented endpoint
+    returns HTTP 401, confirming the API is live and auth-gated. Auth specifics
+    (key vs token) are behind login; docs only state an account is required. No
+    public OpenAPI, Swagger, or AsyncAPI document is published - probes of
+    swagger.json/openapi.json on the portal and API hosts returned 404, and no
+    spec links appear in the documentation - so no spec was harvested. Beyond
+    HTTP, the company site advertises SFTP flat-file feed delivery, which
+    remains the primary institutional channel; no WebSocket, FIX, or multicast
+    delivery is documented. EDI is independent and privately held, founded in
+    1994 by Jonathan Bloch (owner/CEO), headquartered in London with operations
+    in the USA, India, and Morocco, and has not been acquired.
+  developerPortal: https://developer.exchange-data.com/
+  apiCatalogue: https://developer.exchange-data.com/api-documentation/
+  commercialPosture: Self-serve registration with API Playground; per-product subscriptions and entitlements; no public pricing page; sales contact for licensing.
+  authentication: Account required; unauthenticated calls return HTTP 401. Exact scheme (API key vs token) not publicly documented.
+  deliveryChannels:
+    - REST (https://api3.exchange-data.com, JSON/PSV responses)
+    - SFTP flat files (advertised on exchange-data.com for feed delivery)
+  specAvailability: None public. No OpenAPI/Swagger/AsyncAPI links in docs; swagger.json/openapi.json probes 404 on developer.exchange-data.com and api3.exchange-data.com.
+  ownership: Independent, privately held; founded 1994 by Jonathan Bloch (owner and CEO), London HQ; offices in USA, India, Morocco; 450+ institutional clients.
+  probes:
+    - url: https://developer.exchange-data.com/
+      status: 200
+    - url: https://developer.exchange-data.com/register
+      status: 200
+    - url: https://developer.exchange-data.com/contact
+      status: 200
+    - url: https://api3.exchange-data.com/
+      status: 404
+    - url: https://api3.exchange-data.com/GetLatestDerivActions?format=json
+      status: 401
+      note: Live endpoint; auth required.
+    - url: https://developer.exchange-data.com/swagger.json
+      status: 404
+    - url: https://developer.exchange-data.com/openapi.json
+      status: 404
+    - url: https://api3.exchange-data.com/swagger.json
+      status: 404
+    - url: https://www.exchange-data.com/
+      status: 200
+    - url: https://www.exchange-data.com/insights-edi/
+      status: 200
+      note: 403 to a bare curl UA; 200 with a browser user agent.
+    - url: https://www.exchange-data.com/terms-and-conditions/
+      status: 200
+    - url: https://www.exchange-data.com/privacy-policy/
+      status: 200
+    - url: https://github.com/exchange-data-international
+      status: 404
+      note: No public GitHub organization found.
+    - url: https://www.linkedin.com/company/exchange-data-international/
+      status: 999
+      note: LinkedIn bot block on probe; URL is linked from the exchange-data.com homepage.
+sources:
+  - url: https://developer.exchange-data.com/
+    type: Portal
+    note: Self-serve registration, API Playground, catalogue of 24 API products plus several marked coming soon (Bond Sigma, Universal Depositary Receipts, Worldwide Cost Basis, Short Interest Data, US Mutual Funds).
+  - url: https://developer.exchange-data.com/api-documentation/
+    type: Documentation
+    note: Per-product documentation pages each show a Get{Product} endpoint on https://api3.exchange-data.com with JSON/PSV formats; the US Economic Data page shows its endpoint with an http:// scheme on the same host.
+  - url: https://developer.exchange-data.com/api-documentation/world_corporate_actions
+    type: Documentation
+    note: GetLatestCorporateActions with 200+ output fields, queried by OperationalMic/LocalCode/ISIN/EventCD.
+  - url: https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data
+    type: Documentation
+    note: GetLatestEODPrices with MIC/LocalCode/ISIN parameters, pagination via next token, pageCount/totalCount.
+  - url: https://www.exchange-data.com/
+    type: Website
+    note: Advertises data delivery by SFTP, API and more across corporate actions, pricing, reference, fixed income, derivatives, economic, and funds data.
+actions:
+  openapiHarvested: false
+  reason: |
+    No public machine-readable spec exists to harvest. The 24 documented
+    endpoints, shared base URL, and parameter patterns were captured into
+    apis.yml from the developer portal documentation pages verbatim; authoring
+    a spec from prose would be fabrication, so the openapi/ folder was omitted.
