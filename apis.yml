@@ -12,7 +12,20 @@ description: 'Exchange Data International (EDI) is an independent, privately hel
   24 API products on a shared base at api3.exchange-data.com, with account registration, an
   API Playground, per-product subscriptions, and JSON or pipe-separated responses. No public
   OpenAPI or AsyncAPI specification is published.'
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: subscription
+  onboarding: self-service
+  trial: true
+  try_now: false
+  public: false
+  label: Self-serve subscription with free playground
+  confidence: medium
+  source:
+  - https://developer.exchange-data.com/p/api-faq
+  - https://developer.exchange-data.com/p/developers-and-startups
+  generated: '2026-07-22'
+  method: searched
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/exchange-data-international.png
 tags:
 - Financial
 - Market Data
@@ -25,7 +38,7 @@ tags:
 - Stocks
 - Exchange
 created: '2026-07-21'
-modified: '2026-07-21'
+modified: '2026-07-22'
 specificationVersion: '0.19'
 apis:
 - aid: exchange-data-international:end-of-day-pricing-api
@@ -363,6 +376,24 @@ apis:
     type: Documentation
   description: Foreign exchange rates via the GetLatestFXRates endpoint.
 common:
+- type: DomainSecurity
+  url: security/exchange-data-international-domain-security.yml
+- type: WellKnown
+  url: well-known/exchange-data-international-well-known.yml
+- type: Authentication
+  url: authentication/exchange-data-international-authentication.yml
+- type: ErrorCatalog
+  url: errors/exchange-data-international-problem-types.yml
+- type: Conventions
+  url: conventions/exchange-data-international-conventions.yml
+- type: Sandbox
+  url: sandbox/exchange-data-international-sandbox.yml
+- type: Conformance
+  url: conformance/exchange-data-international-conformance.yml
+- type: LLMsTxt
+  url: llms/exchange-data-international-llms.txt
+- type: APIReference
+  url: https://developer.exchange-data.com/api-documentation/
 - type: Website
   url: https://www.exchange-data.com/
 - type: Portal

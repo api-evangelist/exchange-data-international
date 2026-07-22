@@ -1,0 +1,28 @@
+generated: '2026-07-22'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.exchange-data.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  4 10:16:49 2026 GMT
+  hsts: true
+  hsts_max_age: 2592000
+- host: developer.exchange-data.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 19 13:18:07 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api3.exchange-data.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 19 13:18:07 2026 GMT
+  hsts: null
+domains:
+- domain: exchange-data.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

@@ -1,0 +1,24 @@
+generated: '2026-07-22'
+method: searched
+source: live probes of https://api3.exchange-data.com on 2026-07-22
+format: json-error-envelope
+note: EDI publishes no error reference and no OpenAPI; errors observed on the live
+  API use a plain JSON envelope with a single "error" string field (not RFC 9457
+  application/problem+json). Only errors actually observed are recorded.
+envelope:
+  content_type: application/json
+  shape: '{"error": "<message>"}'
+problems:
+- status: 401
+  title: Authorization field missing
+  detail: Returned when a request reaches any endpoint on api3.exchange-data.com
+    without an Authorization header.
+  remediation: Send your EDI production license key in the Authorization header.
+  evidence: GET /GetLatestEODPrices?MIC=USCOMP&format=json -> 401
+- status: 403
+  title: Access to this API has been disallowed
+  detail: Returned when the Authorization credential presented is not valid for the
+    requested API product (invalid key, or no active subscription to the product).
+  remediation: Verify the license key is correct and that your account holds an active
+    subscription for the API product being called.
+  evidence: 'GET /GetLatestEODPrices with header Authorization: Bearer notatoken -> 403'

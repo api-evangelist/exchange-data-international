@@ -1,0 +1,61 @@
+generated: '2026-07-22'
+method: searched
+source: https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data
+docs:
+- https://developer.exchange-data.com/api-documentation/
+- https://developer.exchange-data.com/p/api-faq
+note: Captured from the EDI Developer portal endpoint documentation, the API FAQ,
+  and live probes; EDI publishes no OpenAPI or cross-cutting conventions page, so
+  only documented/observed behavior is recorded.
+authentication:
+  style: api-key
+  header: Authorization
+  reference: authentication/exchange-data-international-authentication.yml
+api_style:
+  paradigm: rpc-over-http
+  detail: Each of the 24 API products exposes verb-named GET endpoints on the shared
+    https://api3.exchange-data.com base (GetLatestEODPrices, GetLatestCorporateActions,
+    GetBondSecurityMaster, ...), with query-string parameters for identifiers (MIC,
+    LocalCode, ISIN, FIGI) and format.
+formats:
+  request: query-string parameters
+  response:
+  - json
+  - psv
+  parameter: Format
+  detail: The Format query parameter selects the response encoding (for example json
+    or PSV pipe-separated values); the Developers and Startups page also advertises
+    JSON, XML and CSV output options.
+pagination:
+  style: token
+  response_fields:
+  - pageCount
+  - totalCount
+  - next
+  detail: Responses include pageCount (records returned, example 10000), totalCount,
+    and a next token; the caller passes the opaque next token back to fetch the next
+    chunk of records.
+identifiers:
+  detail: Queries key on ISO 10383 MIC, exchange-local codes/tickers, ISO 6166 ISIN,
+    US CUSIP-derived uscode, FIGI, and the EDI-assigned secid linkage code; currencies
+    use ISO 4217.
+idempotency:
+  supported: null
+  detail: No idempotency-key mechanism is documented; the public surface is read-only
+    GET data retrieval.
+versioning:
+  scheme: none-documented
+  detail: No version segment or versioning policy is published; the host name (api3)
+    carries the platform generation.
+rate_limits:
+  documented: false
+  detail: No rate-limit headers or quotas are documented. The API FAQ notes the platform
+    runs on GCP and is sized to absorb usage spikes; the Playground UI shows 20 records
+    and allows downloading up to 1,000 records per request.
+error_envelope:
+  shape: '{"error": "<message>"}'
+  reference: errors/exchange-data-international-problem-types.yml
+data_freshness:
+  detail: Per the API FAQ, API data increments in batches (for example WCA increment 0
+    between 5am-7am GMT); clients poll for completed sets, and there is no push/status
+    alert mechanism on the API (SFTP delivery is the push alternative).

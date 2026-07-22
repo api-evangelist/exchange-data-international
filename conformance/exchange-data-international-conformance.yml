@@ -1,0 +1,42 @@
+generated: '2026-07-22'
+method: derived
+source: developer.exchange-data.com endpoint documentation + live probes of api3.exchange-data.com
+note: Derived from the developer portal docs and observed API behavior; EDI publishes
+  no OpenAPI and no compliance/certification program page, so only standards visible
+  on the public surface are asserted.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Authentication is a static license key in the Authorization header; no
+    OAuth 2.0 endpoints or well-known metadata exist (/.well-known/oauth-authorization-server
+    404).
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on all hosts.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a plain JSON envelope {"error":"..."} with content-type application/json,
+    not application/problem+json.
+- id: pagination
+  conforms: true
+  evidence: Token-based pagination documented on endpoint pages (pageCount, totalCount,
+    opaque next token passed back to fetch the next chunk).
+- id: iso-10383-mic
+  conforms: true
+  evidence: Endpoints key on the ISO standard Market Identification Code (MIC parameter,
+    example USCOMP) per the endpoint documentation.
+- id: iso-6166-isin
+  conforms: true
+  evidence: Endpoints accept and return ISIN codes (example US0378331005) per the
+    endpoint documentation.
+- id: iso-4217-currency
+  conforms: true
+  evidence: Responses carry the ISO standard Currency Identification Code (currency
+    field, example EUR).
+- id: figi
+  conforms: true
+  evidence: Dedicated FIGI query endpoints (GetLatestEODPricesByFIGI, GetHistoricalEODPricesByFIGI)
+    and FIGI identifiers documented in the End of Day Pricing product.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on all hosts.

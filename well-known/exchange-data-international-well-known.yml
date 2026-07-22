@@ -1,0 +1,42 @@
+generated: '2026-07-22'
+method: searched
+source: live probes of api3.exchange-data.com, developer.exchange-data.com, www.exchange-data.com
+note: No well-known discovery documents are published on any Exchange Data International
+  host. Every probe below returned 404 on 2026-07-22; absence recorded as valid data.
+hosts:
+- host: https://api3.exchange-data.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+- host: https://developer.exchange-data.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+- host: https://www.exchange-data.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404

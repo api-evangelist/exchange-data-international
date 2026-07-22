@@ -1,0 +1,50 @@
+# Exchange Data International
+
+> Exchange Data International (EDI) is an independent London-based financial data vendor (founded 1994) selling securities reference data, worldwide equity and fixed income corporate actions, end-of-day pricing, adjustment factors, shares outstanding, derivatives reference and pricing, economic indicators and calendars, fund NAVs, and FX rates. A self-serve REST API on the shared base https://api3.exchange-data.com exposes 24 documented API products; authentication is a production license key sent in the Authorization header, issued on registration at the EDI Developer portal. Responses are JSON or pipe-separated values with token-based pagination. No public OpenAPI, AsyncAPI, or llms.txt is published by the provider; this file is generated from the API Evangelist catalog.
+
+## APIs
+
+- [End of Day Pricing Data](https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data): Worldwide end-of-day equity pricing via GetLatestEODPrices (plus historical, last-trade, and FIGI variants)
+- [Adjustment Factors Data](https://developer.exchange-data.com/api-documentation/adjustment_factors_data): Corporate-action adjustment factors via GetLatestAdjustmentFactors
+- [Worldwide Equity Analytics](https://developer.exchange-data.com/api-documentation/worldwide_equity_analytics): Equity analytics measures via GetLatestEquityAnalytics
+- [OTC Bond Pricing](https://developer.exchange-data.com/api-documentation/bond_price_otc_data): Daily OTC bond pricing and yield curves via GetBondLatestPricing
+- [Derivatives Reference Data](https://developer.exchange-data.com/api-documentation/derivatives_reference_data): Listed derivatives security master via GetOptionSecurityMaster
+- [Derivatives End of Day Pricing](https://developer.exchange-data.com/api-documentation/derivatives_end_of_day_pricing): Listed derivatives EOD pricing via GetDerivativesPricing
+- [Worldwide Corporate Actions](https://developer.exchange-data.com/api-documentation/world_corporate_actions): Equity corporate actions (200+ fields) via GetLatestCorporateActions
+- [Exchange Traded Notes](https://developer.exchange-data.com/api-documentation/exchange_traded_notes): ETN data via GetLatestExchangeTradedNotes
+- [Worldwide Fixed Income Corporate Actions](https://developer.exchange-data.com/api-documentation/worldwide_fixed_income_corporate_action): Bond security master and corporate actions via GetBondSecurityMaster
+- [Securities Reference Data](https://developer.exchange-data.com/api-documentation/securities_reference_data): Consolidated securities reference file via GetConsolidatedSRF
+- [Global Market Holidays and Timings](https://developer.exchange-data.com/api-documentation/financial_public_holidays): Exchange holidays and market timings via GetGlobalMarketHolidays
+- [Worldwide Shares Outstanding](https://developer.exchange-data.com/api-documentation/worldwide_shares_outstanding): Shares outstanding via GetLatestSharesOutstanding
+- [DerivActions](https://developer.exchange-data.com/api-documentation/deriv_actions): Exchange adjustment notices for listed derivatives via GetLatestDerivActions
+- [Global Economic Indicators](https://developer.exchange-data.com/api-documentation/economic_indicator): Economic indicator releases via GetLatestEconomicIndicator
+- [Economic Calendar](https://developer.exchange-data.com/api-documentation/economic_calendar): Forward-looking economic calendar via GetLatestEconomicCalendar
+- [Central Bank Calendar](https://developer.exchange-data.com/api-documentation/central_bank_calendar): Central bank meeting calendar via GetLatestCentralBankCalendar
+- [US Economic Data](https://developer.exchange-data.com/api-documentation/economic_data): US economic data series via GetUsEconomicData
+- [Initial Public Offerings](https://developer.exchange-data.com/api-documentation/initial_public_offerings): Worldwide IPO data via GetLatestInitialPublicOfferings
+- [Corporate Bonds Data](https://developer.exchange-data.com/api-documentation/corporate_bonds_data_dictionary): Corporate bond evaluations via GetLatestCorporateEvaluations
+- [Option Analytics Service](https://developer.exchange-data.com/api-documentation/option_analytics_service): Options analytics and Greeks via GetLatestOptionsGreeks
+- [Worldwide Funds Corporate Actions](https://developer.exchange-data.com/api-documentation/worldwide_funds_corporate_action): Fund corporate actions via GetLatestSouthAfricanFundDistributions
+- [Net Asset Value](https://developer.exchange-data.com/api-documentation/net_asset_value): Investment fund NAVs via GetLatestNetAssetValue
+- [Index Constitution](https://developer.exchange-data.com/api-documentation/index_constitution): Index constituent reference data via GetReferenceNameForIndexConstituents
+- [Foreign Exchange Rates](https://developer.exchange-data.com/api-documentation/foreign_exchange_rates): FX rates via GetLatestFXRates
+
+## Docs
+
+- [Developer Portal](https://developer.exchange-data.com/): Registration, per-product subscriptions, API Playground
+- [API Documentation](https://developer.exchange-data.com/api-documentation/): Endpoint reference with parameters and output fields per product
+- [API FAQ](https://developer.exchange-data.com/p/api-faq): Licensing, playground limits, data increment schedules
+- [Register](https://developer.exchange-data.com/register): Free account; production license key enabled from day 1
+- [Company Website](https://www.exchange-data.com/): Exchange Data International corporate site
+- [Insights Blog](https://www.exchange-data.com/insights-edi/): EDI news and analysis
+
+## Specs
+
+- [APIs.json profile](https://raw.githubusercontent.com/api-evangelist/exchange-data-international/refs/heads/main/apis.yml): Machine-readable index of EDI's 24 API products
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/exchange-data-international/refs/heads/main/authentication/exchange-data-international-authentication.yml): License-key auth captured from docs and live probes
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/exchange-data-international/refs/heads/main/conventions/exchange-data-international-conventions.yml): Pagination, formats, error envelope, identifiers
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/exchange-data-international/refs/heads/main/errors/exchange-data-international-problem-types.yml): Observed error envelope and status codes
+
+## Optional
+
+- Note: EDI publishes no OpenAPI, AsyncAPI, GraphQL schema, or MCP server; the developer portal HTML documentation is the authoritative reference.

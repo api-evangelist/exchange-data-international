@@ -1,0 +1,31 @@
+generated: '2026-07-22'
+method: searched
+source: https://developer.exchange-data.com/p/api-faq
+docs: https://developer.exchange-data.com/p/api-faq
+note: EDI publishes no OpenAPI, so this profile is captured from the developer portal
+  docs, the API FAQ, and live probes of the api3.exchange-data.com host on 2026-07-22.
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: LicenseKey
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Production license key sent in the Authorization header. Per the API
+    FAQ, "Upon registration the Prod License key will be enabled from day 1" - users
+    register on the developer portal and use the production key when integrating.
+    All 24 API products on the shared api3.exchange-data.com base require it; access
+    to each product is gated by per-product subscription.
+  evidence:
+  - probe: GET https://api3.exchange-data.com/GetLatestEODPrices?MIC=USCOMP&format=json
+      (no Authorization header)
+    result: 'HTTP 401 {"error": "Authorization field missing"}'
+  - probe: 'GET with header Authorization: Bearer notatoken'
+    result: 'HTTP 403 {"error": "Access to this API has been disallowed"}'
+onboarding:
+  register: https://developer.exchange-data.com/register
+  notes: Self-serve registration on the EDI Developer portal grants an account, access
+    to the API Playground, and a production license key from day 1; individual API
+    products require a subscription.

@@ -1,0 +1,26 @@
+generated: '2026-07-22'
+method: searched
+source: https://developer.exchange-data.com/p/api-faq
+docs:
+- https://developer.exchange-data.com/p/api-faq
+- https://developer.exchange-data.com/p/developers-and-startups
+environment:
+  name: API Playground
+  kind: console
+  detail: Interactive API Playground embedded in every endpoint documentation page
+    on the EDI Developer portal. It runs against live production data (there is no
+    separate test dataset or sandbox key space) - the Developers and Startups page
+    describes it as a way to "test live data feeds without having to pay".
+access:
+  account_required: true
+  register: https://developer.exchange-data.com/register
+  detail: The playground test form requires a (free) developer account; upon registration
+    the production license key is enabled from day 1, so the same key drives Playground
+    and production use.
+limits:
+- The Playground UI displays only 20 records per request.
+- Up to 1,000 records per request can be viewed after downloading the result.
+test_data:
+  detail: No magic test identifiers or synthetic fixtures are published; documentation
+    examples use real market identifiers (for example MIC USCOMP, LocalCode AAPL,
+    ISIN US0378331005).
