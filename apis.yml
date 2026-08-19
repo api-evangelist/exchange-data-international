@@ -39,7 +39,7 @@ tags:
 - Exchange
 created: '2026-07-21'
 modified: '2026-07-22'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: exchange-data-international:end-of-day-pricing-api
   name: EDI End of Day Pricing Data API
