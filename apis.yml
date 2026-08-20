@@ -366,6 +366,10 @@ apis:
   name: EDI Foreign Exchange Rates API
   tags:
   - FX
+  - Currency
+  - Rates
+  tags_raw:
+  - FX
   - Currencies
   - Rates
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
