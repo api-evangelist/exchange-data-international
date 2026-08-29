@@ -12,6 +12,17 @@ description: 'Exchange Data International (EDI) is an independent, privately hel
   24 API products on a shared base at api3.exchange-data.com, with account registration, an
   API Playground, per-product subscriptions, and JSON or pipe-separated responses. No public
   OpenAPI or AsyncAPI specification is published.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: subscription
   onboarding: self-service
