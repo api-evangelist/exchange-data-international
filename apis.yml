@@ -57,6 +57,10 @@ apis:
   tags:
   - Pricing
   - End of Day
+  - Stocks
+  tags_raw:
+  - Pricing
+  - End of Day
   - Equities
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.exchange-data.com/api-documentation/end_of_day_pricing_data
@@ -85,6 +89,9 @@ apis:
 - aid: exchange-data-international:worldwide-equity-analytics-api
   name: EDI Worldwide Equity Analytics API
   tags:
+  - Stocks
+  - Analytics
+  tags_raw:
   - Equities
   - Analytics
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -140,6 +147,10 @@ apis:
 - aid: exchange-data-international:worldwide-corporate-actions-api
   name: EDI Worldwide Corporate Actions API
   tags:
+  - Corporate Actions
+  - Stocks
+  - Dividends
+  tags_raw:
   - Corporate Actions
   - Equities
   - Dividends
@@ -198,6 +209,10 @@ apis:
   tags:
   - Market Holidays
   - Trading Calendar
+  - Exchange
+  tags_raw:
+  - Market Holidays
+  - Trading Calendar
   - Exchanges
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.exchange-data.com/api-documentation/financial_public_holidays
@@ -210,6 +225,10 @@ apis:
 - aid: exchange-data-international:worldwide-shares-outstanding-api
   name: EDI Worldwide Shares Outstanding API
   tags:
+  - Shares Outstanding
+  - Stocks
+  - Reference Data
+  tags_raw:
   - Shares Outstanding
   - Equities
   - Reference Data
@@ -294,6 +313,10 @@ apis:
   name: EDI Initial Public Offerings API
   tags:
   - IPO
+  - Stocks
+  - New Issues
+  tags_raw:
+  - IPO
   - Equities
   - New Issues
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -335,6 +358,10 @@ apis:
 - aid: exchange-data-international:worldwide-funds-corporate-actions-api
   name: EDI Worldwide Funds Corporate Actions API
   tags:
+  - Fund
+  - Corporate Actions
+  - Distributions
+  tags_raw:
   - Funds
   - Corporate Actions
   - Distributions
@@ -349,6 +376,10 @@ apis:
 - aid: exchange-data-international:net-asset-value-api
   name: EDI Net Asset Value API
   tags:
+  - Fund
+  - NAV
+  - Pricing
+  tags_raw:
   - Funds
   - NAV
   - Pricing
