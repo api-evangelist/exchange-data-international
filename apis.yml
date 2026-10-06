@@ -58,7 +58,7 @@ tags_raw:
 - Economic Data
 - Stocks
 created: '2026-07-21'
-modified: '2026-07-22'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: exchange-data-international:end-of-day-pricing-api
@@ -431,6 +431,8 @@ apis:
     type: Documentation
   description: Foreign exchange rates via the GetLatestFXRates endpoint.
 common:
+- url: https://www.exchange-data.com/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/exchange-data-international-domain-security.yml
 - type: WellKnown
