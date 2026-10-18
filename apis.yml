@@ -416,7 +416,7 @@ apis:
 - aid: exchange-data-international:foreign-exchange-rates-api
   name: EDI Foreign Exchange Rates API
   tags:
-  - FX
+  - Foreign Exchange
   - Currency
   - Rates
   tags_raw:
