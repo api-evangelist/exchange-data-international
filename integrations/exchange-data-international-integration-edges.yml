@@ -1,0 +1,33 @@
+edges:
+- partner_name: Databricks Marketplace
+  partner: databricks
+  partner_match: aggregator
+  type: marketplace
+  marketplace: databricks-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://marketplace.databricks.com/provider/83edb75b-70ab-4484-bd48-cd412cee38a2
+  category: data product listing
+  contract_reference:
+    register: Databricks Marketplace (marketplace.databricks.com/api/2.0/public-marketplace-providers + public-marketplace-listings)
+    spec_file: null
+    role: data-marketplace-seller
+    registered_name: Exchange Data International
+    matched_domain: exchange-data.com
+    matched_by: domain
+    listings: 2
+    sample_listings:
+    - SAMPLE Foreign Exchange Rates FX Data | Currency Data | incl. Euro-Legacy Currencies & ISO Codes
+    - SAMPLE Global Credit Default Swap (CDS) Data | 2000+ Reference Entities | Bond Credit Rating | ...
+    signal_note: 'participation: the provider lists data products on this marketplace; counts are context'
+    detected_by: sweep-data-marketplaces.py
+    detected: '2026-10-20'
+  detected_by: sweep-data-marketplaces.py
+  detected: '2026-10-20'
+generated: '2026-10-20'
+method: searched
+source:
+- https://marketplace.databricks.com/
+checked:
+- https://marketplace.databricks.com/
